@@ -1,0 +1,1 @@
+export { EmployeeChapterPill } from './EmployeeChapterPill';
