@@ -1,6 +1,4 @@
-import { Employee, EmployeeCart } from '../types';
-
-const employeeCart: EmployeeCart = {
+const employeeCart = {
   employees: [
     {
       id: 1,
@@ -40,18 +38,16 @@ const employeeCart: EmployeeCart = {
   ],
 };
 
-export const getEmployeeCart = async (): Promise<EmployeeCart> => {
+export const getEmployeeCart = async () => {
   return employeeCart;
 };
 
-export const getEmployeeById = async (
-  id: number,
-): Promise<Employee | undefined> =>
+export const getEmployeeById = async (id: number) =>
   getEmployeeCart().then((employeeCart) =>
     employeeCart.employees.find((p) => p.id === id),
   );
 
-export const deleteEmployeeById = async (id: number): Promise<EmployeeCart> => {
+export const deleteEmployeeById = async (id: number) => {
   const employee = await getEmployeeById(id);
   if (employee) {
     employeeCart.employees = employeeCart.employees.filter(
@@ -61,7 +57,7 @@ export const deleteEmployeeById = async (id: number): Promise<EmployeeCart> => {
   return employeeCart;
 };
 
-export const clearEmployeeCart = async (): Promise<EmployeeCart> => {
+export const clearEmployeeCart = async () => {
   employeeCart.employees = [];
   return employeeCart;
 };
