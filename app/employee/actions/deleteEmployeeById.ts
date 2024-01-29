@@ -1,13 +1,9 @@
 'use server';
-import db from '@/common/utils/db';
+import { employeeService } from '@/common/services/employeeService';
 import { revalidatePath } from 'next/cache';
 
 export const deleteEmployeeById = async (id: string) => {
-  await db.user.delete({
-    where: {
-      id,
-    },
-  });
+  await employeeService.deleteById(id);
 
   revalidatePath('/');
 };

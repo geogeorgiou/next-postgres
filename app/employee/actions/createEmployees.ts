@@ -1,12 +1,10 @@
 'use server';
-import db from '@/common/utils/db';
 import { revalidatePath } from 'next/cache';
 import { Employee } from '../types';
+import { employeeService } from '@/common/services/employeeService';
 
 export const createEmployees = async (data: Employee[]) => {
-  await db.user.createMany({
-    data,
-  });
+  await employeeService.createMany(data);
 
   revalidatePath('/');
 };

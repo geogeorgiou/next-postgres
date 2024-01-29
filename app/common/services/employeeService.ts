@@ -1,3 +1,4 @@
+import { Employee } from '@/employee/types';
 import db from '../utils/db';
 
 export const employeeService = {
@@ -5,5 +6,11 @@ export const employeeService = {
     db.user.findMany({
       orderBy: { createdAt: 'desc' },
     }),
-  getById: (id: number) => db.user.findUnique({ where: { id } }),
+  createMany: (data: Employee[]) => db.user.createMany({ data }),
+  deleteById: (id: string) =>
+    db.user.delete({
+      where: {
+        id,
+      },
+    }),
 };
