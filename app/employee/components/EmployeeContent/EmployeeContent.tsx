@@ -25,7 +25,13 @@ export const EmployeeContent = ({ data }: { data: Employee[] }) => {
         Average Experience:{' '}
         {averageExperience ? averageExperience.toFixed(1) : `0.0`}
       </h3>
-      <EmployeeTable data={data} />
+      {data.length ? (
+        <EmployeeTable data={data} />
+      ) : (
+        <div className='flex justify-center mt-1 mb-8 px-4 py-2 text-sm leading-5 text-white font-bold bg-red-800 rounded-md'>
+          No Employees found!
+        </div>
+      )}
     </div>
   );
 };
