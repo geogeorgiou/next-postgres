@@ -7,7 +7,7 @@ export const BackToHomepage = () => {
       className={
         'flex justify-center mt-1 px-4 py-2 text-sm leading-5 text-white font-bold bg-green-700 hover:bg-green-800 rounded-md'
       }>
-      Back to Employees
+      ⬅️ Back to Employees
     </Link>
   );
 };
