@@ -1,0 +1,1 @@
+export { EmployeeContent } from './EmployeeContent';
