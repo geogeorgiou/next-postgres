@@ -35,8 +35,8 @@ This repository contains latest Docker features, including `docker compose watch
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - Docker
-- Next.js
-- Postgres
+- Next.js - 14.1.0
+- Postgres - 15
 - Tailwind CSS
 
 ## <a name="quick-start">🤸 Quick Start</a>
@@ -51,7 +51,7 @@ Make sure you have the following installed on your machine:
 - [Node.js - 18.17.0](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 - [pnpm - 8.14.3](https://pnpm.io/)
-- [Docker](https://www.docker.com/products/docker-desktop/)
+- [Docker - 4.26.1](https://www.docker.com/products/docker-desktop/)
 
 **Installation**
 
@@ -61,7 +61,19 @@ Install the project dependencies using npm:
 pnpm i
 ```
 
-**Running the Project**
+Spin up docker daemon and run:
+
+```bash
+docker compose up
+```
+
+Apply necessary migrations:
+
+```bash
+pnpm db:migrate
+```
+
+**Running the Project 🎉🎉🎉**
 
 ```bash
 pnpm run dev
