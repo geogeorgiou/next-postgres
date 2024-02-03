@@ -2,11 +2,13 @@
 import { Employee } from '@/employee/types';
 import { EmployeeChapterPill } from '../EmployeeChapterPill';
 import { EmployeeDeleteAction } from '../EmployeeDeleteAction';
+import styles from './EmployeeTable.module.scss';
 
 export const EmployeeTable = ({ data }: { data: Employee[] }) => {
   return (
     <div className='overflow-x-auto shadow-md sm:rounded-lg'>
-      <div className='inline-block min-w-full align-middle'>
+      <div
+        className={`${styles.tableWrapper} inline-block min-w-full align-middle`}>
         <table className='table-fixed'>
           <thead>
             <tr className='bg-primary uppercase text-sm leading-normal'>
