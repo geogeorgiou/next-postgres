@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
-import { employeeService } from './common/services/employeeService';
 import { EmployeeContent } from './employee/components/EmployeeContent';
+import { getAllEmployees } from './common/services/employeeService';
 
 const EmployeeHome = async () => {
-  const employees = await employeeService.getAll();
+  const employees = await getAllEmployees();
 
   return <EmployeeContent data={employees} />;
 };

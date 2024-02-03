@@ -1,7 +1,7 @@
 'use client';
 import { Employee } from '@/employee/types';
-import { createEmployees } from '@/employee/actions/createEmployees';
-import { generateEmployee, getAverageExperience } from './utils';
+import { generateEmployees } from '@/employee/actions/createEmployees';
+import { getFakerEmployee, getAverageExperience } from './utils';
 import { EmployeeTable } from '../EmployeeTable';
 
 export const EmployeeContent = ({ data }: { data: Employee[] }) => {
@@ -14,7 +14,7 @@ export const EmployeeContent = ({ data }: { data: Employee[] }) => {
           'flex justify-center mt-1 mb-8 px-4 py-2 text-sm leading-5 text-white font-bold bg-green-700 hover:bg-green-800 rounded-md'
         }
         onClick={() =>
-          createEmployees(Array.from({ length: 3 }, generateEmployee))
+          generateEmployees(Array.from({ length: 3 }, getFakerEmployee))
         }>
         Generate Mock Employees
       </button>

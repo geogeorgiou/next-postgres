@@ -1,7 +1,8 @@
 import { CHAPTERS, SENIORITIES } from '@/employee/constants';
+import { Employee } from '@/employee/types';
 import { faker } from '@faker-js/faker';
 
-export const generateEmployee = () => ({
+export const getFakerEmployee = (): Employee => ({
   id: faker.string.uuid().slice(0, 24),
   fullName: faker.person.fullName(),
   seniority: faker.helpers.arrayElement(SENIORITIES),

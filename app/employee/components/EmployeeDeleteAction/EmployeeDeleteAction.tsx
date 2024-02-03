@@ -1,12 +1,13 @@
 'use client';
-import { deleteEmployeeById } from '@/employee/actions/deleteEmployeeById';
+import { removeEmployeeById } from '@/employee/actions/removeEmployeeById';
+import { Employee } from '@/employee/types';
 
-export const EmployeeDeleteAction = ({ id }: { id: any }) => {
+export const EmployeeDeleteAction = ({ id }: { id: Employee['id'] }) => {
   return (
     <div
       className='w-4 hover:text-red-500 hover:scale-110 cursor-pointer'
       onClick={async () => {
-        deleteEmployeeById(id);
+        removeEmployeeById(id);
       }}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
