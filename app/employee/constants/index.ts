@@ -4,6 +4,13 @@ export const SENIORITIES = [
   'senior',
   'principal',
   'chapter-leader',
-];
+] as const;
 
-export const CHAPTERS = ['web', 'java', 'seti', '.net', 'ui-ux', 'data'];
+export const CHAPTERS = [
+  'web',
+  'java',
+  'seti',
+  '.net',
+  'ui-ux',
+  'data',
+] as const;

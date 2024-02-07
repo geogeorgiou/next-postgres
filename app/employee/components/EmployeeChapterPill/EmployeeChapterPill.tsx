@@ -40,8 +40,9 @@ export const EmployeeChapterPill = ({ chapter }: { chapter: Chapter }) => {
           Data
         </span>
       );
-    default:
+    default: {
       const exhaustiveCheck: never = chapter;
-      return exhaustiveCheck;
+      throw new Error(`Unhandled chapter: ${exhaustiveCheck}`);
+    }
   }
 };
