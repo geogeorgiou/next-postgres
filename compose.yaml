@@ -1,13 +1,24 @@
 version: '3.8'
 
 services:
-  # app:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
 
-  #   ports:
-  #     - 3000:3000
+    ports:
+      - 3000:3000
+
+    env_file:
+      - .env.production
+
+    depends_on:
+      - db
+
+    # migration:
+    #   command: npx prisma migrate dev --name init --preview-feature
+    #   depends_on:
+    #     - db
 
   #   # use docker compose to watch for changes and rebuild the container
   #   develop:
@@ -22,7 +33,7 @@ services:
   #         target: /app
   #         action: sync
 
-  postgres:
+  db:
     image: postgres:15-alpine
 
     ports:
