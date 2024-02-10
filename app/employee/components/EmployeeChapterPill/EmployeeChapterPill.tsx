@@ -36,8 +36,11 @@ const chapterToClassMap: Record<Chapter, ChapterPillConfig> = {
   },
 };
 
-export const EmployeeChapterPill = ({ chapter }: { chapter: Chapter }) => {
-  if (!CHAPTERS.includes(chapter)) {
+const isChapter = (chapter: string): chapter is Chapter =>
+  CHAPTERS.includes(chapter as Chapter);
+
+export const EmployeeChapterPill = ({ chapter }: { chapter: string }) => {
+  if (!isChapter(chapter)) {
     return (
       <div className={`${defaultClasses} bg-red-400 text-red-800`}>???</div>
     );
